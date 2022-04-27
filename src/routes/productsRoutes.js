@@ -26,10 +26,6 @@ router.get("/popular", productsController.popular);
 /*** MORE SALE PRODUCTS ***/
 router.get("/more-sale", productsController.moreSale);
 
-/*** CART PRODUCTS ***/
-router.get("/cart", productsController.emptycart);
-router.get("/cart/:id", productsController.cart);
-
 /*** CREATE ONE PRODUCT ***/
 router.get("/create", productsController.create);
 router.post(
