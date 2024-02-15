@@ -4,7 +4,7 @@
   "description": "**🛒E-commerce de música** 🎵, específicamente venta de discos de vinilo de diferentes géneros musicales.",
   "main": "app.js",
   "scripts": {
-    "start": "node ."
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",

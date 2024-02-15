@@ -41,9 +41,21 @@ const carController = {
     });
   },
 
-  carList: (req, res) => {
+  carList: async (req, res) => {
     let { id } = req.params;
-    console.log(id);
+
+    let allProducts = await Car.findAll({
+      include: [{ association: "album" }],
+      where: {
+        id_buyer: req.session.userLogged.id_users,
+      },
+    });
+
+    res.render("products/productListCar.ejs", {
+      allProducts,
+    });
+
+    console.log(allProducts);
   },
 };
 
