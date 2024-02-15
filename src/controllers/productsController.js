@@ -77,23 +77,6 @@ const productsController = {
     });
   },
 
-  //Carro de compras vacío
-  emptycart: (req, res) => {
-    res.render("products/productCartEmpty");
-  },
-
-  // Carro de compras
-  cart: (req, res) => {
-    let { id } = req.params;
-    Album.findByPk(id, {
-      include: [{ association: "artist" }],
-    }).then((album) => {
-      res.render("products/productCart", {
-        album,
-      });
-    });
-  },
-
   // Create - Form to create
   create: async (req, res) => {
     let allGenres = await Genre.findAll();

@@ -74,3 +74,14 @@ CREATE TABLE artists
     CONSTRAINT fk_album FOREIGN KEY (id_album) REFERENCES albums (id_albums),
     CONSTRAINT fk_invoice FOREIGN KEY (id_invoice) REFERENCES invoices (id_invoices)
  );
+
+ CREATE TABLE cars (
+    id_cars INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_buyer INT NOT NULL,
+    id_product INT NOT NULL,
+    quantity INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_buyer) REFERENCES users(id_users),
+    FOREIGN KEY (id_product) REFERENCES albums(id_albums)
+);

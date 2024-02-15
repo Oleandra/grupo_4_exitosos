@@ -31,12 +31,14 @@
       <div class="header-carrito">
         <h2>Tu carrito</h2>
       </div>
+
+      <% for(const product of allProducts) { %>
       <div class="productoX">
         <a href="/products/detail">
-          <img class="img-car" src="/images/covers/<%= albumInCar.image %>" />
+          <img class="img-car" src="/images/covers/<%= product.image %>" />
         </a>
         <div class="info-album">
-          <p class="artist"><%= albumInCar.artist.name %></p>
+          <p class="artist"><%= product.artist.name %></p>
         </div>
         <div class="cantidad">
           <i class="fas fa-minus-circle"></i>
@@ -44,10 +46,11 @@
           <i class="fas fa-plus"></i>
         </div>
         <div>
-          <p class="precio-album">$<%= albumInCar.price %> MXN</p>
+          <p class="precio-album">$<%= product.price %> MXN</p>
         </div>
         <p class="borrar"><a href="#">Eliminar</a></p>
       </div>
+      <% } %>
 
       <div class="subtotal">
         <h5>Subtotal</h5>

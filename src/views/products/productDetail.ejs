@@ -39,11 +39,9 @@
 
             <div class="product-price">
               <div class="add-btn">
-                <button id="buyBotton" type="button">
-                  <a id="buyId" href="/products/cart/<%= album.id_albums %>"
-                    >Comprame
-                  </a>
-                </button>
+                <form action="/car/<%= album.id_albums %>" method="POST">
+                  <button id="buyBotton" type="submit">Comprame</button>
+                </form>
 
                 <% if (locals.isLogged) { %>
                 <button class="form-btn edit">

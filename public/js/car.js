@@ -3,10 +3,6 @@ addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
 
-    // const deteleAlbum = (id) => {
-    //   carrito.filter(car => car.id == id)
-    // }
-
     const arrayPrice = () => {
       let convertToNumber = carrito.map((cars) => {
         return Number(cars.price.split("$")[1]);
@@ -18,8 +14,6 @@ addEventListener("DOMContentLoaded", () => {
     let total = arrayPrice().reduce(
       (previousValue, currentValue) => previousValue + currentValue
     );
-
-    console.log(total);
 
     const listCar = () => {
       let res = carrito.map(
@@ -38,12 +32,22 @@ addEventListener("DOMContentLoaded", () => {
       <div>
         <p class='precio-album'>${price} MXN</p>
       </div>
-      <p class='borrar'>
+      <p class='borrar' >
         <a href='#'>Eliminar</a>
       </p>`
       );
       return res;
     };
+
+    // const deteleAllProducts = () => {
+    //   localStorage.removeItem("carrito");
+    // };
+
+    // onclick="${deteleAllProducts()}"
+
+    //   <button  class="form-btn" type="button">
+    //   <a href="/">Vaciar carrito</a>
+    // </button>
 
     mainCar.innerHTML = `
     <section class="container-car" style="margin-bottom: 5%">

@@ -45,6 +45,7 @@ app.set("views", path.join(__dirname, "views"));
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const productsRoutes = require("./routes/productsRoutes");
+const carRoutes = require("./routes/carRoutes");
 
 //Aquí llamo a la ruta de las api de movies
 const apiUserRouter = require("./routes/api/usersApiRoute");
@@ -54,6 +55,7 @@ const apiGenresRoter = require("./routes/api/genresApiRoute");
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productsRoutes);
+app.use("/car", carRoutes);
 
 //Aquí creo la colección de mis recursos (APIs)
 app.use("/api/users", apiUserRouter);
